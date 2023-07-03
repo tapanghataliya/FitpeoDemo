@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fitpeodemoapp.R
 import com.example.fitpeodemoapp.feature.ui.splash.viewmodel.SplashViewModel
-import com.example.fitpeodemoapp.feature.ui.home.ui.MainActivity
+import com.example.fitpeodemoapp.feature.ui.home.ui.PhotosActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -15,6 +15,7 @@ class SplashActivity:AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_splash)
 
         viewModel.splashCompleted.observe(this) {
@@ -26,8 +27,8 @@ class SplashActivity:AppCompatActivity() {
     }
 
     //Navigate to home screen
-    fun navigateToDashboard() {
-        startActivity(Intent(this, MainActivity::class.java))
+    private fun navigateToDashboard() {
+        startActivity(Intent(this, PhotosActivity::class.java))
         finish()
     }
 }
