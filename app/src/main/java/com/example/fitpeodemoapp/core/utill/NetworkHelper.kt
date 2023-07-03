@@ -12,6 +12,7 @@ import javax.inject.Singleton
 @Singleton
 class NetworkHelper @Inject constructor(@ApplicationContext private val context: Context) {
 
+    //This is network function to check network is availble or not
     fun isNetworkConnected(): Boolean {
         var result = false
         val connectivityManager =

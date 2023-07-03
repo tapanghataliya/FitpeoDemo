@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET("photos")
-    suspend fun getUsers(): Response<List<Photos>>
+    suspend fun getPhoto(): Response<List<Photos>>
 
 }

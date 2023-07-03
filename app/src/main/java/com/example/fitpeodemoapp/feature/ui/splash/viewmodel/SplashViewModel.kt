@@ -15,6 +15,7 @@ class SplashViewModel : ViewModel() {
     val splashCompleted: LiveData<Boolean>
         get() = _splashCompleted
 
+    //This function launch and display splash screen 3 second after redirect on home screen.
     fun splashRedirect() {
         viewModelScope.launch(Dispatchers.Main) {
             _splashCompleted.value = true
