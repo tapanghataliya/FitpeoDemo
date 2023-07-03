@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.view.*
 @AndroidEntryPoint
 class PhotosActivity : AppCompatActivity() {
 
+    //Declare variables
     private lateinit var binding: ActivityMainBinding
     private val photoViewModel : PhotosViewModel by viewModels()
     private lateinit var photoAdapter: PhotosAdapter
@@ -36,9 +37,9 @@ class PhotosActivity : AppCompatActivity() {
 
     //Display data in recyclerview
     private fun setupUI() {
-        binding.rcPhotos.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
         photoAdapter = PhotosAdapter()
-        binding.rcPhotos.adapter = photoAdapter
+        binding.recyclerView.adapter = photoAdapter
     }
 
     //Check data from API and display in screen
@@ -48,11 +49,11 @@ class PhotosActivity : AppCompatActivity() {
                 Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
                     it.data?.let { photos -> renderList(photos) }
-                    binding.rcPhotos.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.VISIBLE
                 }
                 Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
-                    binding.rcPhotos.visibility = View.GONE
+                    binding.recyclerView.visibility = View.GONE
                 }
                 Status.ERROR -> {
                     //Handle Error
@@ -60,7 +61,7 @@ class PhotosActivity : AppCompatActivity() {
                     val myView = findViewById<View>(android.R.id.content)
                     myView.showSnackBar(it.message)
                     binding.imgNoInternet.visibility = View.VISIBLE
-                    binding.rcPhotos.visibility = View.GONE
+                    binding.recyclerView.visibility = View.GONE
                 }
             }
         })
