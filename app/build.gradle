@@ -98,4 +98,8 @@ dependencies {
 
     //Piccaso
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // For unit testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
 }
