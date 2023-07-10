@@ -47,7 +47,7 @@ class PhotosActivity : AppCompatActivity() {
     //Display data in recyclerview
     private fun setupUI() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        photoAdapter = PhotosAdapter()
+        photoAdapter = PhotosAdapter(baseContext)
         binding.recyclerView.adapter = photoAdapter
     }
 

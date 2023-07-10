@@ -35,6 +35,10 @@
             android:name=".feature.ui.home.ui.PhotosActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".feature.ui.Details.DetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

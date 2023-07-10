@@ -6,7 +6,8 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("photos")
+//    @GET("photos")
+    @GET("movielist.json")
     suspend fun getPhoto(): Response<List<Photos>>
 
 }
